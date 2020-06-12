@@ -7,6 +7,12 @@
 	<title>
 		Custom login page
 	</title>
+	
+	<style>
+		.failed{
+			color: red;
+		}
+	</style>
 </head>
 
 
@@ -16,8 +22,8 @@
 	<form:form action = "${pageContext.request.contextPath}/authenticateTheUser"
 				method = "POST">
 		
-		<c:if test="${param.error}!=null">
-			<i>Invalid credentials is what you have given</i>
+		<c:if test="${param.error!=null}">
+			<i class = "failed">Invalid credentials is what you have given</i>
 		</c:if>
 		
 		
